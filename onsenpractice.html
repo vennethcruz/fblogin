@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    
+</head>
+<body>
+
+    <ons-page>
+        <ons-row>
+            <ons-col width="50%" align="left">
+                Genre
+            </ons-col>
+            
+            <ons-col width="50%" align="left">
+                    <ons-list>
+                        <ons-col width="50%">
+                            <ons-list-item tappable>
+                              <label class="left">
+                                <ons-checkbox input-id="check-1"></ons-checkbox>
+                              </label>
+                              <label for="check-1" class="center">
+                                Apple
+                              </label>
+                            </ons-list-item>
+                        </ons-col>
+                        <ons-col width="50%">
+                            <ons-list-item tappable>
+                              <label class="left">
+                                <ons-checkbox modifier="noborder" input-id="check-2"></ons-checkbox>
+                              </label>
+                              <label for="check-2" class="center">
+                                Banana
+                              </label>
+                            </ons-list-item>
+                        </ons-col>
+                          </ons-list>
+            </ons-col>
+        </ons-row>
+
+
+    </ons-page>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+      function showModal() {
+  var modal = document.querySelector('ons-modal');
+  modal.show();
+  setTimeout(function() {
+    modal.hide();
+  }, 2000);
+}</script>
+</body>
+</html>
