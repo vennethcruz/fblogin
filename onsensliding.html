@@ -8,54 +8,277 @@
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
     <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-    <script>ons.bootstrap();</script>
+   
+    
 </head>
 <body>
-        <ons-sliding-menu main-page="page1.html" menu-page="menu.html" side="left" max-slide-distance="250px" var="menu">
-            </ons-sliding-menu>
-            
-            <ons-template id="page1.html">
-              <ons-page>
-                <ons-toolbar>
+  <ons-splitter>
+    <ons-splitter-side id="menu" side="right" width="230px" collapse swipeable>
+      <ons-page>
+        <ons-list>
+          <ons-list-item></ons-list-item>
+            <ons-list-header>Configuration</ons-list-header>
+          <ons-list-item onclick="fn.load('configuration.html')" tappable>
+            Posted destination Configuration
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('settings.html')" tappable>
+            Help
+          </ons-list-item>
+          <ons-list-header>Application Information</ons-list-header>
+          <ons-list-item align="center">
+            Talknote Fast <br>
+            1.0.0.0
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('about.html')" tappable>
+             Privacy Policy
+            </ons-list-item>
+          <ons-list-item onclick="fn.load('terms.html')" tappable>
+              Terms of Service
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('about.html')" tappable>
+              App Review
+          </ons-list-item>
+        </ons-list>
+      </ons-page>
+    </ons-splitter-side>
+    <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
+  </ons-splitter>
+  
+  <template id="home.html">
+    <ons-page>
+      <ons-toolbar class="traydor">
+        <div class="right">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+         Main
+        </div>
+      </ons-toolbar>
+      <textarea>
+        </textarea>
+    </ons-page>
+  </template>
+  <template id="configuration.html">
+      <ons-page>
+     
+        <ons-toolbar >
+          <div color="red" class=”center”>
+                  Settings
+          </div>
+        </ons-toolbar>
+        
+        <ons-list>
+        <ons-list-item class="input-items">
+              <div class="left">
+                ID
+              </div>
+              <label class="center">
+                   email@gmail.com
+            </label>
+            </ons-list-item>
+            <ons-list-item class="input-items">
                   <div class="left">
-                    <ons-toolbar-button ng-click="menu.toggleMenu()">
-                      <ons-icon icon="ion-navicon" style="font-size: 32px; width: 1em;"></ons-icon>
-                    </ons-toolbar-button>
+                    Log-in Confirmation
                   </div>
-                  <div class="center">Page 1</div>
-                </ons-toolbar>
+                  </ons-list-item>
             
-                <p style="text-align: center; color: #999; padding-top: 100px;">Page1 Contents</p>
-              </ons-page>
-            </ons-template>
-            
-            
-            <ons-template id="page2.html">
-              <ons-page>
-                <ons-toolbar>
-                  <div class="left">
-                    <ons-toolbar-button onclick="menu.toggleMenu()">
-                      <ons-icon icon="ion-navicon" style="font-size: 32px; width: 1em;"></ons-icon>
-                    </ons-toolbar-button>
-                  </div>
-                  <div class="center">Page 2</div>
-                </ons-toolbar>
-            
-                <p style="text-align: center; color: #999; padding-top: 100px;">Page2 Contents</p>
-              </ons-page>
-            </ons-template>
-            
-            <ons-template id="menu.html">
-              <ons-list>
-                <ons-list-item modifier="chevron" onclick="menu.setMainPage('page1.html', {closeMenu: true})">
-                  page1.html
-                </ons-list-item>
-                <ons-list-item modifier="chevron" onclick="menu.setMainPage('page2.html', {closeMenu: true})">
-                  page2.html
-                </ons-list-item>
+              <ons-list-header>Target 01</ons-list-header>
+              <ons-list-item class="input-items">
+                <div class="left">
+                  Genre
+                </div>
+                <label class="center">
+                      <ons-radio name="group" value="first">Group</ons-radio>
+                      <ons-radio name="group" value="second">Message</ons-radio>
+              </label>
+              </ons-list-item>
+              <ons-list-item class="input-items">
+                <div class="left">
+                  Name
+                </div>
+                <label class="center">
+                      <ons-input placeholder="Name of the thread" float></ons-input>
+              </label>
+              </ons-list-item>
+              <ons-list-item class="input-items">
+                <div class="left">
+                  D-Name
+                </div>
+                <label class="center">
+                      <ons-input placeholder="Display Name" float></ons-input>
+              </label>
+              </ons-list-item>
+              
+              <ons-list-item class="input-items">
+                      <div class="left">
+                        Format
+                      </div>
+                      <label class="center">
+                            <ons-input placeholder="Text" float></ons-input>
+                    </label>
+                    </ons-list-item>
+          </ons-list>
+    
+          <ons-list>
+                  <ons-list-header>Target 02</ons-list-header>
+                  <ons-list-item class="input-items">
+                    <div class="left">
+                      Genre
+                    </div>
+                    <label class="center">
+                          <ons-radio name="group" value="first">Group</ons-radio>
+                          <ons-radio name="group" value="second">Message</ons-radio>
+                  </label>
+                  </ons-list-item>
+                  <ons-list-item class="input-items">
+                    <div class="left">
+                      Name
+                    </div>
+                    <label class="center">
+                          <ons-input placeholder="Name of the thread" float></ons-input>
+                  </label>
+                  </ons-list-item>
+                  <ons-list-item class="input-items">
+                    <div class="left">
+                      D-Name
+                    </div>
+                    <label class="center">
+                          <ons-input placeholder="Display Name" float></ons-input>
+                  </label>
+                  </ons-list-item>
+                  
+                  <ons-list-item class="input-items">
+                          <div class="left">
+                            Format
+                          </div>
+                          <label class="center">
+                                <ons-input placeholder="Text" float></ons-input>
+                        </label>
+                        </ons-list-item>
               </ons-list>
-            </ons-template>
-            <script>
-            ons.bootstrap();</script>
+    
+              <ons-list>
+                      <ons-list-header>Target 03</ons-list-header>
+                      <ons-list-item class="input-items">
+                        <div class="left">  
+                          Genre
+                        </div>
+                        <label class="center">
+                              <ons-radio name="group" value="first">Group</ons-radio>
+                              <ons-radio name="group" value="second">Message</ons-radio>
+                      </label>
+                      </ons-list-item>
+                      <ons-list-item class="input-items">
+                        <div class="left">
+                          Name
+                        </div>
+                        <label class="center">
+                              <ons-input placeholder="Name of the thread" float></ons-input>
+                      </label>
+                      </ons-list-item>
+                      <ons-list-item class="input-items">
+                        <div class="left">
+                          D-Name
+                        </div>
+                        <label class="center">
+                              <ons-input placeholder="Display Name" float></ons-input>
+                      </label>
+                      </ons-list-item>
+                      
+                      <ons-list-item class="input-items">
+                              <div class="left">
+                                Format
+                              </div>
+                              <label class="center">
+                                    <ons-input placeholder="Text" float></ons-input>
+                            </label>
+                            </ons-list-item>
+                  </ons-list>
+                
+      </ons-page>
+    </template>
+  
+  <template id="settings.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Settings
+        </div>
+      </ons-toolbar>
+    </ons-page>
+  </template>
+  
+  <template id="about.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="right">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          About
+        </div>
+      </ons-toolbar>
+      <div class="about-description">
+
+          t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+
+
+
+
+      </div>
+    </ons-page>
+  </template>
+  <template id="terms.html">
+      <ons-page>
+        <ons-toolbar>
+          <div class="right">
+            <ons-toolbar-button onclick="fn.open()">
+              <ons-icon icon="md-menu"></ons-icon>
+            </ons-toolbar-button>
+          </div>
+          <div class="center">
+            About
+          </div>
+        </ons-toolbar>
+        <div class="about-description">
+  
+          terms
+
+        </div>
+      </ons-page>
+    </template>
+  <script>
+        
+        $(document).ready(function(){
+  $("button").click(function(){
+    $("p").slideToggle();
+  });
+});
+    
+  window.fn = {};
+
+window.fn.open = function() {
+  var menu = document.getElementById('menu');
+  menu.open();
+};
+
+window.fn.load = function(page) {
+  var content = document.getElementById('content');
+  var menu = document.getElementById('menu');
+  content.load(page)
+    .then(menu.close.bind(menu));
+};
+
+
+</script>
 </body>
 </html>

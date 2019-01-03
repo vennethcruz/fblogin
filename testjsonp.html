@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+<script>
+ var settings = {
+  "async": true,
+  "dataType": 'json',
+
+  "url": "https://cors-anywhere.herokuapp.com/https://eapi.talknote.com/api/v1/dm/post/?dm_id=3259106&message=testing 153",
+  "method": "POST",
+  "headers": {
+    "X-TALKNOTE-OAUTH-TOKEN": "t32BVYKFR_CnIxnsQRxrTA",
+    "cache-control": "no-cache",
+   
+  }
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+</script>
+</body>
+</html>

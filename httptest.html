@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+       <script>
+var data = null;
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+
+xhr.open("POST", "https://oauth.talknote.com/oauth/token?redirect_uri=http://localhost/onsenpractice/httptest.html&client_id=bc38b6979ace90117b4f19f7a78fc01a49b2c528&client_secret=22ea7e23a4a0aa8e2196509ec9d0df8a81866369&code=vwxohepFRlqsChRCBcWh0A&grant_type=authorization_code");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("Postman-Token", "83d21414-fae8-4fb0-a6cd-38cc925bcfe8");
+
+xhr.send(data);
+</script>
+
+<div id="hello">
+    ha
+</div>
+<script type ="text/javascript">
+    window.onload = function what(){
+    document.getElementById('hello').style.color = 'red';
+    };
+    </script>
+</body>
+</html>

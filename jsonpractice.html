@@ -54,27 +54,26 @@
     console.log(person.children[1]);
 
     */
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-        var response = JSON.parse(xhttp.responseText);
-        var people = response.people;
-        var output = '';
-        
-        for (i = 0; i < people.length; i++){
-          
-            output += '<li>'+people[i].name+'</li>';
-            
-        }
-        
-        document.getElementById('people').innerHTML = output;
-        
-            }
-        };
-    xhttp.open("GET", "data.json", true);
-    xhttp.send();
-    </script>
-    <a href="intent://example.com#Intent;scheme=http;package=com.example.mypackage;end">ha</a>
+var data = null;
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+
+xhr.open("POST", "https://oauth.talknote.com/oauth/token?redirect_uri=http://localhost/onsenpractice/httptest.html&client_id=bc38b6979ace90117b4f19f7a78fc01a49b2c528&client_secret=22ea7e23a4a0aa8e2196509ec9d0df8a81866369&code=vwxohepFRlqsChRCBcWh0A&grant_type=authorization_code");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("Access-Control-Allow-Credentials", 'true');
+xhr.setRequestHeader("Access-Control-Allow-Methods",'POST');
+xhr.setRequestHeader("Access-Control-Allow-Headers","Content-Type");
+
+xhr.send(data);
     
+</script>
+
 </body>
 </html>
